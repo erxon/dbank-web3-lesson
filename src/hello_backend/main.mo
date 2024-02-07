@@ -18,4 +18,11 @@ actor {
       Debug.print("Invalid number");
     };
   };
+
+  //Query function
+  public query func checkBalance() : async Nat{
+    return currentValue;
+  };
+
+
 };
