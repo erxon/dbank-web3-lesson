@@ -1,5 +1,15 @@
+import Debug "mo:base/Debug";
+
 actor {
-  public query func greet(name : Text) : async Text {
-    return "Hello, " # name # "!";
+  var currentValue = 100;
+
+  public func topUp(amount: Nat){
+    currentValue += amount;
+    Debug.print(debug_show(currentValue));
+  };
+
+  public func withdraw(amount: Nat){
+    currentValue -= amount;
+    Debug.print(debug_show(currentValue));
   };
 };
