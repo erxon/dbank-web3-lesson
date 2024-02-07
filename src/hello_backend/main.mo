@@ -3,13 +3,19 @@ import Debug "mo:base/Debug";
 actor {
   var currentValue = 100;
 
-  public func topUp(amount: Nat){
+  public func topUp(amount : Nat) {
     currentValue += amount;
-    Debug.print(debug_show(currentValue));
+    Debug.print(debug_show (currentValue));
   };
 
-  public func withdraw(amount: Nat){
-    currentValue -= amount;
-    Debug.print(debug_show(currentValue));
+  public func withdraw(amount : Nat) {
+    let tempValue : Int = currentValue - amount;
+
+    if (tempValue >= 0) {
+      currentValue -= amount;
+      Debug.print(debug_show (currentValue));
+    } else {
+      Debug.print("Invalid number");
+    };
   };
 };
